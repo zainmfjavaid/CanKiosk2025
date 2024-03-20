@@ -5,8 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>CanKiosk | Guest</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/guest.css">
     </head>
     <body>
-        Guest
+        <div id="category-container">
+            <p class="subtitle">Learn more about our team!</p>
+            <div id="category-grid">
+                <div class="category-item" onclick="window.location.href='/judge/description'">Who are we?</div>
+                <div class="category-item" onclick="window.location.href='/judge/robot'">Why our Robot's Awesome!</div>
+                <div class="category-item" onclick="window.location.href='/judge/cad'">CAD</div>
+                <div class="category-item" onclick="window.location.href='/judge/manufacturing'">Manufacturing</div>
+                <div class="category-item" onclick="window.location.href='/judge/programming'">Programming</div>
+                <div class="category-item" onclick="window.location.href='/judge/business'">Business</div>
+                <div class="category-item" onclick="window.location.href='/judge/entrepreteurship'">Entrepreteurship</div>
+            </div>
+        </div>
     </body>
 </html>

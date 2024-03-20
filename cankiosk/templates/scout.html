@@ -5,8 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>CanKiosk | Scout</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/scout.css">
     </head>
     <body>
-        Scout
+        <div id="category-container">
+            <p class="subtitle">Still have questions? Feel free to ask!</p>
+            <div id="category-grid">
+                <div class="category-item" onclick="window.location.href='/scout/specs'">Robot Specs</div>
+                <div class="category-item" onclick="window.location.href='/scout/strategy'">Strategy</div>
+                <div class="category-item" onclick="window.location.href='/scout/auton'">Auton</div>
+                <div class="category-item" onclick="window.location.href='/scout/documentation'">Documentation</div>
+            </div>
+        </div>
     </body>
 </html>

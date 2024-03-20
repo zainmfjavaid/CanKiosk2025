@@ -30,6 +30,10 @@
     font-weight: 400;
 }
 
+.title:hover, .subtitle:hover, .regular:hover {
+    cursor: default;
+}
+
 .button-black {
     background-color: var(--primary-black);
     color: var(--primary-white);
