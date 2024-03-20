@@ -1,0 +1,48 @@
+:root {
+    --primary-black: #222222;
+    --primary-yellow: #FFCF46;
+    --primary-white: #F6F6F3;
+
+    --light-highlight: #FFEBAD;
+    --dark-highlight: #D6A415;
+
+    --light-shadow: #70707D;
+    --dark-shadow: #0F0F0F;
+}
+
+@font-face {
+    font-family: Bahnschrift;
+    src: url(/static/fonts/bahnschrift.ttf);
+}
+
+.title {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+.regular {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.button-black {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    font-size: 14px;
+    width: 150px;
+    padding: 15px 15px;
+    border: none;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 25px;
+}
+
+.button-black:hover {
+    cursor: pointer;
+}
