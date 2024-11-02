@@ -12,6 +12,34 @@ def home():
 def judge_root():
     return render_template('judge.html')
 
+@app.route('/judge/description')
+def judge_description():
+    return render_template('judge/description.html')
+
+@app.route('/judge/robot')
+def judge_robot():
+    return render_template('judge/robot.html')
+
+@app.route('/judge/cad')
+def judge_cad():
+    return render_template('judge/cad.html')
+
+@app.route('/judge/manufacturing')
+def judge_manufacturing():
+    return render_template('judge/manufacturing.html')
+
+@app.route('/judge/programming')
+def judge_programming():
+    return render_template('judge/programming.html')
+
+@app.route('/judge/business')
+def judge_business():
+    return render_template('judge/business.html')
+
+@app.route('/judge/community')
+def judge_community():
+    return render_template('judge/community.html')
+
 # Scout experience routes
 @app.route('/scout')
 def scout_root():

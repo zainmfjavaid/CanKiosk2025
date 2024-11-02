@@ -40,9 +40,3 @@ body {
 .category-item:hover {
     cursor: pointer;
 }
-
-/* Specs Styles */
-#specs-container {
-    margin-top: 100px;
-    margin-left: 150px;
-}
