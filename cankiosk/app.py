@@ -4,6 +4,11 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
+def idle():
+    return render_template('idle.html')
+
+
+@app.route('/index')
 def home():
     return render_template('index.html')
 
@@ -65,6 +70,8 @@ def scout_documentation():
 @app.route('/guest')
 def guest_root():
     return render_template('guest.html')
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=3000, debug=True)

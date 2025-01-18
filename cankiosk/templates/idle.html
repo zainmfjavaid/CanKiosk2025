@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CanKiosk</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/static/css/idle.css">
+    </head>
+    <body>
+        <a href="/index"><img class="corner-canman" src="/static/images/canman.png" alt="Canman"></a>
+        <img class="left-arrow" style="filter: invert(1);" src="static/images/squiggly_arrow_animation.gif" alt="arrow">  
+        <img class="right-arrow" style="filter: invert(1);" src="static/images/squiggly_arrow_animation.gif" alt="arrow">  
+        <img class="down-arrow" style="filter: invert(1);" src="static/images/squiggly_arrow_animation.gif" alt="arrow">  
+        <img class="up-arrow" style="filter: invert(1);" src="static/images/squiggly_arrow_animation.gif" alt="arrow"> 
+
+        <div id="role-container">
+            <img class="robot-img" onclick="window.location.href='/index'" src="static/images/idle_robot.png" alt="robot">
+            <p style="margin-bottom: -90vh; position: absolute; font-size: 10px; z-index: -100;">click on robot</p>
+            <button  style="z-index: 101;"  class="idle-button button-black" onclick="window.location.href='/index'">Learn More</button> 
+        </div>
+
+    </body>
+
+    <script>
+        const leftArrow = document.querySelector('left-arrow');
+        const rightArrow = document.querySelector('right-arrow');
+        const downArrow = document.querySelector('down-arrow');
+        const upArrow = document.querySelector('up-arrow');
+
+        function assignRandomSpeed() {
+            randomSpeed = Math.random() * 10;
+            return randomSpeed;
+        }
+
+
+        function assignRandomSpawnLeft() {
+            var randomSpawn = (Math.random() * 40) + 30;
+            document.documentElement.style.setProperty('--random-height-left', randomSpawn + 'vh')
+        }
+
+
+        function assignRandomSpawnRight() {
+            var randomSpawn = (Math.random() * 40) + 30;
+            document.documentElement.style.setProperty('--random-height-right', randomSpawn + 'vh')
+        }
+
+
+        function assignRandomSpawnUp() {
+            var randomSpawn = (Math.random() * 32.5) + 32.5;
+            document.documentElement.style.setProperty('--random-width-up', randomSpawn + 'vw')
+        }
+
+
+        function assignRandomSpawnDown() {
+            var randomSpawn = (Math.random() * 32.5) + 32.5;
+            document.documentElement.style.setProperty('--random-width-down', randomSpawn + 'vw')
+        }
+
+
+        assignRandomSpawnLeft();
+        assignRandomSpawnRight();
+        assignRandomSpawnUp();
+        assignRandomSpawnDown();
+
+        document.querySelector('.left-arrow').addEventListener('animationiteration', assignRandomSpawnLeft);
+        document.querySelector('.right-arrow').addEventListener('animationiteration', assignRandomSpawnRight);
+        document.querySelector('.up-arrow').addEventListener('animationiteration', assignRandomSpawnUp);
+        document.querySelector('.down-arrow').addEventListener('animationiteration', assignRandomSpawnDown);
+
+
+
+        ///function assignArrow(int randomSpeed) {
+            ///document.querySelector('left-arrow')
+       /// }
+    </script>
+</html>
