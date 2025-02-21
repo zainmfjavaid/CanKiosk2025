@@ -1,6 +1,5 @@
 @import url(reference.css);
 
-/* Root Styles */
 body {
     background-color: var(--primary-yellow);
     font-family: Bahnschrift;
@@ -12,15 +11,15 @@ body {
     align-items: center;
     position: absolute;
     left: 50%;
-    top: 40%;
-    transform: translateX(-50%) translateY(-60%);
+    top: 50%;
+    transform: translateX(-50%) translateY(-56%);
     row-gap: 25px;
 }
 
 #category-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 25px;
 }
 
@@ -28,11 +27,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 250px;
-    height: 100px;
+    width: 300px;
+    height: 150px;
+    padding: 0 25px;
+    text-align: center;
     border: 2px solid var(--primary-black);
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 27px;
     background-color: var(--light-shadow);
     color: white;
 }
@@ -40,3 +41,4 @@ body {
 .category-item:hover {
     cursor: pointer;
 }
+

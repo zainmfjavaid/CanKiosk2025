@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content= "width=device-width, user-scalable=no">
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>CanKiosk | Scout</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/static/css/scout.css">
         <script type="text/javascript" src="/static/scripts/timeout.js"></script>
     </head>
     <body>
         <a href="/index"><img class="corner-canman" src="/static/images/canman.png" alt="Canman"></a>
+        <div class="back">
+            <a href="/index"> 
+                <p> &lt;back</p>
+            </a>
+        </div>
+        
         <div class="breadcrumb-container">
             <div class="breadcrumb">
                 <a href="/index"><p class="location">Home</p></a>
@@ -20,11 +26,39 @@
         <div id="category-container">
             <p class="subtitle">Still have questions? Feel free to ask!</p>
             <div id="category-grid">
-                <div class="category-item" onclick="window.location.href='/scout/specs'">Robot Specs</div>
-                <div class="category-item" onclick="window.location.href='/scout/strategy'">Strategy</div>
-                <div class="category-item" onclick="window.location.href='/scout/auton'">Auton</div>
-                <div class="category-item" onclick="window.location.href='/scout/documentation'">Documentation</div>
+                <div id="box-scout-spects" class="category-item" onclick="window.location.href='/scout/specs'">Robot Specs</div>
+                <div id="box-scout-strategy" class="category-item" onclick="window.location.href='/scout/strategy'">Strategy</div>
+                <div id="box-scout-auton" class="category-item" onclick="window.location.href='/scout/auton'">Auton</div>
+                <div id="box-scout-documentation" class="category-item" onclick="window.location.href='/scout/documentation'">Documentation</div>
             </div>
         </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                console.log("✅ Script Loaded & Running"); // Debugging Step 1
+
+                document.querySelectorAll("[id^='box-']").forEach(box => {
+                    console.log(`✅ Found element: ${box.id}`); // Debugging Step 2
+
+                    box.addEventListener("click", () => {
+                        console.log(`✅ Click detected on ${box.id}`); // Debugging Step 3
+                        event.stopPropagation();
+
+                        fetch("http://localhost:4000/save", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ message: `Data from ${box.id}` }),
+                        })
+                        .then(response => response.text())
+                        .then(data => console.log("✅ Success:", data))
+                        .catch(error => console.error("❌ Fetch Error:", error));
+                    });
+                });
+            });
+
+       
+       
+       </script>
     </body>
 </html>
+

@@ -45,6 +45,40 @@ def judge_business():
 def judge_community():
     return render_template('judge/community.html')
 
+# Guest experience routes
+
+@app.route('/guest')
+def guest():
+    return render_template('guest.html')
+
+@app.route('/guest/description')
+def guest_description():
+    return render_template('guest/description.html')
+
+@app.route('/guest/robot')
+def guest_robot():
+    return render_template('guest/robot.html')
+
+@app.route('/guest/cad')
+def guest_cad():
+    return render_template('guest/cad.html')
+
+@app.route('/guest/manufacturing')
+def guest_manufacturing():
+    return render_template('guest/manufacturing.html')
+
+@app.route('/guest/programming')
+def guest_programming():
+    return render_template('guest/programming.html')
+
+@app.route('/guest/business')
+def guest_business():
+    return render_template('guest/business.html')
+
+@app.route('/guest/community')
+def guest_community():
+    return render_template('guest/community.html')
+
 # Scout experience routes
 @app.route('/scout')
 def scout_root():
@@ -65,11 +99,6 @@ def scout_auton():
 @app.route('/scout/documentation')
 def scout_documentation():
     return render_template('scout/documentation.html')
-
-# Guest experience routes
-@app.route('/guest')
-def guest_root():
-    return render_template('guest.html')
 
 
 
