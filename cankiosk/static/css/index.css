@@ -23,7 +23,7 @@ body {
 #role-buttons {
     display: flex;
     flex-direction: row;
-    column-gap: 30px;
+    column-gap: 55px;
     position: relative;
 }
 

@@ -7,6 +7,7 @@
         <title>CanKiosk | Scout</title>
         <link rel="stylesheet" href="/static/css/scout.css">
         <script type="text/javascript" src="/static/scripts/timeout.js"></script>
+        <script type="text/javascript" src="/static/scripts/loadItems.js"></script>
     </head>
     <body>
         <a href="/index"><img class="corner-canman" src="/static/images/canman.png" alt="Canman"></a>
@@ -33,32 +34,44 @@
             </div>
         </div>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                console.log("✅ Script Loaded & Running"); // Debugging Step 1
-
-                document.querySelectorAll("[id^='box-']").forEach(box => {
-                    console.log(`✅ Found element: ${box.id}`); // Debugging Step 2
-
-                    box.addEventListener("click", () => {
-                        console.log(`✅ Click detected on ${box.id}`); // Debugging Step 3
-                        event.stopPropagation();
-
-                        fetch("http://localhost:4000/save", {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({ message: `Data from ${box.id}` }),
-                        })
-                        .then(response => response.text())
-                        .then(data => console.log("✅ Success:", data))
-                        .catch(error => console.error("❌ Fetch Error:", error));
-                    });
-                });
-            });
-
-       
-       
-       </script>
+        <div id="background-wrap">
+            <div class="bubble x1"></div>
+            <div class="bubble x2"></div>
+            <div class="bubble x3"></div>
+            <div class="bubble x4"></div>
+            <div class="bubble x5"></div>
+            <div class="bubble x6"></div>
+            <div class="bubble x7"></div>
+            <div class="bubble x8"></div>
+            <div class="bubble x9"></div>
+            <div class="bubble x10"></div>
+        </div>
     </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        console.log("✅ Script Loaded & Running"); 
+
+        document.querySelectorAll("[id^='box-']").forEach(box => {
+            console.log(`✅ Found element: ${box.id}`);
+
+            box.addEventListener("click", (event) => {
+                console.log(`✅ Click detected on ${box.id}`); 
+                event.stopPropagation();
+
+                fetch("http://localhost:4000/save", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: `Data from ${box.id}` }),
+                })
+                .then(response => response.text())
+                .then(data => console.log("✅ Success:", data))
+                .catch(error => console.error("❌ Fetch Error:", error));
+            });
+        });
+    });
+
+
+
+</script>
 
