@@ -23,7 +23,7 @@ body {
 .idle-button {
     position: absolute;
     font-size: 16px;
-    margin-bottom: 50vh;
+    margin-bottom: 60vh;
     animation: throb 6.4s infinite ease-out;
 }
 
