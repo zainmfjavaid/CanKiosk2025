@@ -77,10 +77,12 @@ body {
 .robot-img {
     display: flex;
     position: relative;
-    height: 125%;
-    width: 125%;
-    margin-top: 15vh;
+    height: 100%;
+    width: 100%;
+    left: 2%;
+    margin-top: 20vh;
     animation: glow 8s infinite;
+    transform: rotate(2deg);
 }
 
 .robot-img:hover {
