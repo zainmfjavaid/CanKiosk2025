@@ -21,7 +21,8 @@
 }
 
 .subtitle {
-    font-size: 28px;
+    margin-top: 100px;
+    font-size: 37px;
     font-weight: 500;
 }
 
@@ -85,8 +86,23 @@
 
 .breadcrumb p.location {
     font-size: 29px;
+    display: inline-block;
+    position: relative;
     color: var(--primary-black);
 }
+
+.breadcrumb p.location.selected::before {
+    content: url('/static/images/fish-svgrepo-com.svg');
+    position: absolute;
+    background: none;
+    bottom: -2px;
+    left: 35%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0.035);
+}
+
 
 .breadcrumb p.divider {
     font-size: 32px;
@@ -134,6 +150,8 @@ a {
     left: 200px;
     font-size: 29px;
 }
+
+
 
 @keyframes loadGrid {
     0% {transform: translateY(30px); opacity: 0;}

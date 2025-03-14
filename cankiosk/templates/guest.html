@@ -8,23 +8,11 @@
         <link rel="stylesheet" href="/static/css/guest.css">
         <script type="text/javascript" src="/static/scripts/timeout.js"></script>
         <script type="text/javascript" src="/static/scripts/loadItems.js"></script>
+        <script type="text/javascript" src="/static/scripts/currentPage.js"></script>
+
     </head>
     <body>
         <a href="/index"><img class="corner-canman" src="/static/images/canman.png" alt="Canman"></a>
-
-        <div class="back">
-            <a href="/index"> 
-                <p> &lt;back</p>
-            </a>
-        </div>
-        
-        <div class="breadcrumb-container">
-            <div class="breadcrumb">
-                <a href="/index"><p class="location">Home</p></a>
-                <p class="divider">/</p>
-                <a href="/guest"><p class="location">Guest</p></a>
-            </div>
-        </div>
         <div id="category-container">
             <p class="subtitle">Learn more about our team!</p>
             <div id="category-grid">
@@ -49,7 +37,22 @@
             <div class="bubble x9"></div>
             <div class="bubble x10"></div>
         </div>
+        <div class="back">
+            <a href="/index"> 
+                <p> &lt;back</p>
+            </a>
+        </div>
+        
+        <div class="breadcrumb-container">
+            <div class="breadcrumb">
+                <a href="/index"><p class="location">Home</p></a>
+                <p class="divider">/</p>
+                <a href="/guest"><p class="location" id="currentPage">Guest</p></a>
+            </div>
+        </div>
     </body>
+
+    
 </html>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
