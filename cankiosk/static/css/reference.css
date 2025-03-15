@@ -112,15 +112,15 @@
 /* Content Styles */
 #content-container {
     margin-top: 50px;
-    margin-left: 150px;
-    padding-right: 150px;
+    margin-left: 100px;
+    padding-right: 50px;
 }
 
 .page-content {
     letter-spacing: .05em;
     line-height: 1.3;
     padding-right: 50px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .two-column {
@@ -137,10 +137,9 @@
 }
 
 .side-image {
-    width: 383px;
-    height: 500px;
+    width: 337.5px;
+    height: 450px;
 }
-
 a {
     all: unset;
     cursor: pointer;
@@ -420,6 +419,7 @@ html, body {
     animation-name: robotFade;
     animation-iteration-count: infinite;
     animation-duration: 6s;
+    z-index: -10;
 }
 
 @-webkit-keyframes robotFade {
@@ -438,11 +438,14 @@ html, body {
 }
 
 #f1 {
+    z-index: -10;
     -webkit-animation-delay: 0s;
 }
 #f2 {
+    z-index: -10;
     -webkit-animation-delay: -4s;
 }
 #f3 {
+    z-index: -10;
     -webkit-animation-delay: -2s;
 }
