@@ -45,3 +45,17 @@ body {
     cursor: pointer;
 }
 
+.open-arrow {
+    display: inline-block;
+    opacity: 1;
+    margin-left: 20px;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+#open-arrow1, #open-arrow2, #open-arrow3, #open-arrow4 {
+    transform: scale(2);
+    font-weight: 500;
+}
+
+
+

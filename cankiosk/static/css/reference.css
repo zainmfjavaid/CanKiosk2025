@@ -140,6 +140,11 @@
     width: 337.5px;
     height: 450px;
 }
+
+#side-gif {
+    transition: 2.3s ease-in;
+}
+
 a {
     all: unset;
     cursor: pointer;
@@ -422,6 +427,23 @@ html, body {
     z-index: -10;
 }
 
+
+.fadein .robot-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 38%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: glow 4s ease-in-out infinite, robotFadeSpin 12s infinite;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    z-index: 10000;
+}
+
+
 @-webkit-keyframes robotFade {
     0% {opacity: 0;}
     20% {opacity: 1;}
@@ -437,6 +459,13 @@ html, body {
     100% {opacity: 0;}
 }
 
+@keyframes robotFadeSpin {
+    0% {opacity: 1;}
+    10% {opacity: 1;}
+    20% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
 #f1 {
     z-index: -10;
     -webkit-animation-delay: 0s;
@@ -449,3 +478,57 @@ html, body {
     z-index: -10;
     -webkit-animation-delay: -2s;
 }
+
+
+#r1 {
+    animation-delay: 0s;
+}
+#r2 {
+    animation-delay: -10.5s;
+}
+#r3 {
+    animation-delay: -9s;
+}
+
+#r4 {
+    animation-delay: -7.5s;
+}
+#r5 {
+    animation-delay: -6s;
+}
+#r6 {
+    animation-delay: -4.5s;
+}
+#r7 {
+    animation-delay: -3s;
+}
+#r8 {
+    animation-delay: -1.5s;
+}
+
+@keyframes glow {
+    0% {
+        filter: drop-shadow(0 0 0.25rem black);
+    }
+
+    50% {
+        filter: drop-shadow(0 0 0.6rem blue);
+
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0.25rem black);
+
+    }
+
+}
+
+#side-gif {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#side-gif.fadein {
+    opacity: 1;
+}
+

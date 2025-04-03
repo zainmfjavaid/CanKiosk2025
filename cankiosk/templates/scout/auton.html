@@ -27,12 +27,136 @@
             </div>
         </div>
        <div id="content-container">
-            <p class="title" style="text-decoration: underline;">Auton</p>
-            <p class="page-content">
-                All three sides L1 preload.
-                <br><br>
-                Working on L4 preload.
-            </p>
+        <p class="title" style="text-decoration: underline;">Auton</p>
+            <div class="two-column">
+                <p class="page-content" style="min-width: 50%; font-size: 18px;">
+                    Two L4 on left side branches (Preload + torch grab).
+                    <span class="open-arrow" id="open-arrow1">&gt; </span>
+                    <br><br>
+                    Center L4 preload (working on all sides L4 preload).
+                    <span class="open-arrow" id="open-arrow2">&gt; </span>
+                    <br><br>
+                    All three sides L1 preload.
+                    <span class="open-arrow" id="open-arrow3">&gt; </span>
+                    <br><br>
+                    Leave.
+                    <span class="open-arrow" id="open-arrow4">&gt; </span>
+                </p>
+                <div id="side-gif">
+                </div>
+            </div>
        </div>
     </body>
 </html>
+<script>
+    const openButton1 = document.getElementById('open-arrow1');
+    const openButton2 = document.getElementById('open-arrow2');
+    const openButton3 = document.getElementById('open-arrow3');
+    const openButton4 = document.getElementById('open-arrow4');
+
+    let clicked1 = false;
+    let clicked2 = false;
+    let clicked3 = false;
+    let clicked4 = false;
+
+    const sideGif = document.getElementById('side-gif');
+
+    function resetAll(except) {
+        [openButton1, openButton2, openButton3, openButton4].forEach((btn, i) => {
+            if (i !== except) {
+                btn.style.transform = 'scale(2)';
+                btn.style.fontWeight = '500';
+            }
+        });
+        [clicked1, clicked2, clicked3, clicked4] = [false, false, false, false];
+    }
+
+    function fadeInGif(html) {
+        sideGif.classList.remove('fadein');
+        sideGif.style.opacity = '0'; // Reset manually
+        sideGif.innerHTML = html;
+
+        // Wait for the DOM to render the new innerHTML before applying fade-in
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                sideGif.classList.add('fadein');
+                sideGif.style.opacity = '1';
+            });
+        });
+    }
+
+
+    openButton1.addEventListener('click', () => {
+        if (!clicked1) {
+            resetAll(0);
+            openButton1.style.transform = 'scale(3.5)';
+            openButton1.style.fontWeight = '700';
+            clicked1 = true;
+
+            fadeInGif('<img src="/static/images/pathplanner.gif" style="width:100%; left: 60%; margin-bottom: 25px;">');
+
+        } else {
+            openButton1.style.transform = 'scale(2)';
+            openButton1.style.fontWeight = '500';
+            clicked1 = false;
+            sideGif.innerHTML = '';
+        }
+    });
+
+    openButton2.addEventListener('click', () => {
+        if (!clicked2) {
+            resetAll(1);
+            openButton2.style.transform = 'scale(3.5)';
+            openButton2.style.fontWeight = '700';
+            clicked2 = true;
+
+            fadeInGif('<img src="/static/images/pathplannerL4Preload.gif" style="width:100%; left: 60%; margin-top: 25px ;">');
+
+        } else {
+            openButton2.style.transform = 'scale(2)';
+            openButton2.style.fontWeight = '500';
+            clicked2 = false;
+            sideGif.innerHTML = '';
+        }
+    });
+
+    openButton3.addEventListener('click', () => {
+        if (!clicked3) {
+            resetAll(2);
+            openButton3.style.transform = 'scale(3.5)';
+            openButton3.style.fontWeight = '700';
+            clicked3 = true;
+
+            fadeInGif(`
+                <div>
+                    <img src="/static/images/pathplannerleftpreload.gif" style="width:100%; left: 60%;">
+                    <img src="/static/images/pathplannerrightpreload.gif" style="width:100%; left: 60%;">
+                </div>
+            `);
+
+
+        } else {
+            openButton3.style.transform = 'scale(2)';
+            openButton3.style.fontWeight = '500';
+            clicked3 = false;
+            sideGif.innerHTML = '';
+        }
+    });
+
+    openButton4.addEventListener('click', () => {
+        if (!clicked4) {
+            resetAll(3);
+            openButton4.style.transform = 'scale(3.5)';
+            openButton4.style.fontWeight = '700';
+            clicked4 = true;
+
+            fadeInGif('<img src="/static/images/pathplannerleave.gif" style="width:100%; left: 60%;">');
+
+        } else {
+            openButton4.style.transform = 'scale(2)';
+            openButton4.style.fontWeight = '500';
+            clicked4 = false;
+            sideGif.innerHTML = '';
+        }
+    });
+</script>
